@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base styles for light and dark themes */
+@layer base {
+  html {
+    @apply bg-light-background text-light-text;
+    font-family: 'Inter', sans-serif; /* Default font */
+  }
+
+  html.dark {
+    @apply bg-dark-background text-dark-text;
+  }
+
+  body {
+    @apply min-h-screen flex flex-col;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Headings */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold;
+    /* Light theme heading colors */
+    @apply text-light-text;
+  }
+  html.dark h1, html.dark h2, html.dark h3, html.dark h4, html.dark h5, html.dark h6 {
+    /* Dark theme heading colors */
+    @apply text-dark-text;
+  }
+
+  h1 { @apply text-3xl md:text-4xl mb-4; }
+  h2 { @apply text-2xl md:text-3xl mb-3; }
+  h3 { @apply text-xl md:text-2xl mb-2; }
+
+  /* Paragraphs */
+  p {
+    @apply mb-4 leading-relaxed text-light-secondary-text;
+  }
+  html.dark p {
+    @apply text-dark-secondary-text;
+  }
+
+  /* Links */
+  a {
+    @apply text-light-primary hover:underline;
+  }
+  html.dark a {
+    @apply text-dark-primary;
+  }
+
+  /* Utility for card-like elements */
+  .content-card {
+    @apply bg-light-card p-6 rounded-lg shadow;
+  }
+  html.dark .content-card {
+    @apply bg-dark-card;
+  }
+
+  /* Basic button styling (can be expanded in components) */
+  .btn {
+    @apply px-4 py-2 rounded-md font-medium transition-colors;
+  }
+  .btn-primary {
+    @apply bg-light-primary text-white hover:bg-opacity-90;
+  }
+  html.dark .btn-primary {
+    @apply bg-dark-primary text-dark-text hover:bg-opacity-90;
+  }
+
+}
+
+/* You can add more global styles or component utilities here */
